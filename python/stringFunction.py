@@ -23,4 +23,4 @@ print(text.endswith("! "))#check if string starts or ends with certain substring
 print("simple split", text.split())#split strings into list
 
 words=["Python", "is", "fun"]
-print("", join("words"))#join the list of string with a seperator
+print("" . join("words"))#join the list of string with a seperator

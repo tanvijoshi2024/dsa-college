@@ -18,6 +18,13 @@ list.remove("am")
 list.remove("living")
 print(list)
 #DIFFERENCE BETWEEN HIHEST AND SMALLEST NO OF THE LIST
+num=[22,1,34,66,87,65,90]
+difference = max(num)- min(num)
+print("difference:",difference)
 
 #APPEND A NEW LELMENT IN THE LIST WHICH IS HALF OF THE ITEM OF THIRD POSITION IN THE LIST
+num=[3,5,7,9,2,1,6]
+half_value = num[7]/2
+num.append(half_value)
+print(num)
     

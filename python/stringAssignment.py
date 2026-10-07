@@ -1,5 +1,5 @@
 text=input("Enter a string:")
-print("no of vowels:", text.count("a", "e", "i", "o", "u"), "in text" )
+print("no of vowels:", (sum(text.count(vowels)for vowels in "aeiouAEIOU")), "in text" )
 
 text="ha" 
 print(text*3)

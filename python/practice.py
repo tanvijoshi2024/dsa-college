@@ -7,9 +7,13 @@ s=[4]
 print()
 #Reverse the accepting String
 s=("Tanvi")
-
+print(s[::-1])
 #Accept sentence from user and count the vowels
+sentence=input("enter a sentence")
+print(sum(sentence.count(vowel)for vowel in "aeiouAEIOU"))
 #remove duplicates from the list
+num=[1,2,3,2,4,3,5,4,]
+print(list(set(num)))
 #Reverse the list
-list=["apple","mango","cherry","banana"]
-list.reversed(list)
+fruits=["apple","mango","cherry","banana"]
+print(list.reversed(fruits))
