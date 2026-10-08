@@ -33,6 +33,7 @@ class Linkedlist:
         prev.next=temp.next  
    
     def reverse(self):    #reverse the numbers
+        print("list elements:")
         curr=self.head
         prev=None
         while(curr) :
@@ -40,7 +41,7 @@ class Linkedlist:
             curr.next=prev
             prev=curr
             curr=nextnode
-        return prev              
+        self.head=prev             
     
     
     
@@ -64,4 +65,6 @@ list.append(Node(55))
 list.print()
 list.del_node(40)
 list.print()
+list.reverse()
+print()
 
