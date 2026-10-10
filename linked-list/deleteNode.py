@@ -65,6 +65,7 @@ list.append(Node(55))
 list.print()
 list.del_node(40)
 list.print()
+
 list.reverse()
 print()
 
