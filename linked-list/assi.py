@@ -22,12 +22,12 @@ class linkedList:
             return
         temp = self.head
         while (temp):
-            print(temp.data, end="->" if temp.next else "\n")
+            print(temp.data, end=" " if temp.next else "\n")
             temp = temp.next
         
 
     # 3. Insert node at a specific position 
-    def insert_at_position(self, new_node, pos,val):
+    def insert_at_position(self, pos,val):
         new_node = Node(val)
         
         # If inserting at the very front (position 1)
@@ -40,8 +40,8 @@ class linkedList:
             while(p!=pos -1 and temp.next != None):
                 temp=temp.next
                 p+=1
-                new_node.next = temp.next
-                temp.next=new_node
+            new_node.next = temp.next
+            temp.next=new_node
         
 
     # 4. Find Middle node and print its value
@@ -60,21 +60,23 @@ class linkedList:
         print(f"Middle node value: {slow.data}")
 
     # 5. Delete node (by value)
-    def delete_node(self, key,val):
+    def delete_node(self,val):
         temp = self.head
-        prev = None
+        if temp ==None:
+            print("list is empty")
+            return
+        
         if temp.data ==val:
             self.head = self.head.next
             return
-        while(temp):
-            if temp.data == val:
-                break
-            else:
-                prev = temp
-                temp = temp.next
+        prev = None
+        while(temp and temp.data!=val):
+            prev = temp
+            temp = temp.next
         if temp==None:
             print("Value is not there in the list")
-            return        
+            return 
+        prev.next=temp.next       
         
        
     # 6. Reverse list
@@ -104,18 +106,45 @@ class linkedList:
             print(f"({temp.data} + {temp.next.data}) = {pair_sum}")
             temp = temp.next
 
+    def print(self):
+       if (self.head ==None):
+           print("empty list")
+           return
+       temp = self.head
+       result=[]
+       while temp:
+           result.append(str(temp.data))
+           temp = temp.next
+           print(" ".join(result))
+           
+l1=linkedList()
+l1.append(Node(10))
+l1.append(Node(20))
+l1.append(Node(30))
+print("1) Traverse:")
+l1.traverse()
+print("2) Print")
+l1.print()
+print("2) Print")
+l1.print()
+print("3) Insert 90 at position 2")
+l1.insert_at_position(90,2)
+l1.print()
+print("3b) Insert 33 at position 7")
+l1.insert_at_position(33,7)
+l1.print()
+print("4) Middle")
+l1.find_middle()
+print("5) Delete 30:")
+l1.delete_node(20)
+l1.print()
+print("6) Reverse:")
+l1.reverse()
+l1.print()
+print("7) Sum consecutive:")
+l1.sum_consecutive()
 
-list=LinkedList()
-n1 =Node(10)
-n2=Node(20)
-n3=Node(30)
-list.append(n1)
-list.append(n2)
-list.append(n3)
-list.print()
-list.insert(Node(100),1)
-list.print()
-list.insert(Node(66),4)
-list.print
+
+    
 
         
