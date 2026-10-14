@@ -1,0 +1,1 @@
+#Read all the lines from a file into a list. Print the total number of lines and
