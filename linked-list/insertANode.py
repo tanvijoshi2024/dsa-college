@@ -32,13 +32,13 @@ class Linkedlist:
     
     
     def print(self):
-        count=0
-        temp=self.head
-        while temp.next:
-            print(temp.data)
-            temp=temp.next.next
-        if temp:
-            print(temp.data)    
+         print()
+         print("list of elements:")
+         temp=self.head
+         while temp:
+            print(temp.data,end=" ")
+            temp=temp.next
+            
 
 list=Linkedlist()
 n1=Node(10)
