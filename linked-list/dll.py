@@ -34,14 +34,17 @@ class linkedList:
             temp.next=new_node 
             new_node.prev=temp  
 
-
-
+    
     def print(self):
-        temp=self.head
-        print("list of elements:")            
-        while temp:
-            print(temp.data,end =" ")
-            temp=temp.next
+            temp=self.head
+            print("list of elements:")            
+            while temp.next:
+                #print(temp.data,end =" ")(for reverse)
+                temp=temp.next
+            while (temp):#reverse the node
+                print(temp.data,end =" ")
+                temp=temp.prev
+
 
 list=linkedList()
 list.append(Node(12))
