@@ -60,6 +60,18 @@ class linkedList:
                 print(temp.data,end =" ")
                 temp=temp.prev
 
+# count the no. of occurances of a number in the list
+    def count_oc(self,num):
+        temp=self.head
+        count=0
+        while temp:
+            if temp.data==num:
+                count+=1
+            temp=temp.next
+        print("the occurance is:",count)
+
+# write a function to swap first and last node 
+
 
 list=linkedList()
 list.append(Node(12))
@@ -67,7 +79,8 @@ list.append(Node(52))
 list.append(Node(102))
 list.append(Node(56))
 list.print()
-list.insert(Node(40),3)
+list.insert(Node(12),600)
 list.print()
 list.delete(102)
 list.print()
+list.count_oc(12)
