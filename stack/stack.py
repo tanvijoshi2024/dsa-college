@@ -36,8 +36,8 @@ class Stack:
         temp=self.top
         while temp:
             st1.push(Node(temp.data))
-            temp=temp.next
-          
+            temp=temp.next    
+       
 
 
 st=Stack()
@@ -54,7 +54,7 @@ st.pop()
 st.print()
 
 #to reverse order in the stack
-st1.reverse()
+st.reverse()
 st1.print()
 
 
