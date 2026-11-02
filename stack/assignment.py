@@ -32,6 +32,12 @@ class Stack:
             st.push(Node(temp.data))
             temp=temp.next  
                  
+     #4. Reverse String using Stack
+    def reverse_string(self):
+        temp=self.top
+        while temp:
+            st.push(Node(temp.data))
+            temp=temp.next
 
     def print(self):
         if self.isempty():
@@ -57,7 +63,10 @@ s.pop()
 s.pop()
 print("after pop elements in the stack are")
 s.print()
-
+#reverse string
+s.reverse_string("hello")
+print("after reversing the string")
+st.print()
 #reverse an element
 s.reverse()
 print("after reversing the stack elements are")
