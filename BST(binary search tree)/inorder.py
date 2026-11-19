@@ -21,9 +21,26 @@ class BST:
                         return
                     else:
                         temp = temp.left
-                else:
+                elif new_node.data>=temp.data:
                     if temp.right is None:
                         temp.right = new_node
                         return
                     else:
                         temp = temp.right
+
+def inorder(temp):   # recursive method
+    if temp is  None:
+        return
+    else:
+        inorder(temp.left)
+        print(temp.data, end=" ")
+        inorder(temp.right)
+
+btree=BST()
+btree.insert(Node(10))
+btree.insert(Node(5))
+btree.insert(Node(2))
+btree.insert(Node(25))
+btree.insert(Node(13))
+btree.insert(Node(40))
+inorder(btree.root)
