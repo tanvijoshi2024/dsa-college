@@ -8,6 +8,7 @@ class BST:
     def __init__(self):
         self.root=None
         self.cnt = 0
+        self.lcnt=0
        
     def insert(self, new_node):
         if self.root is None: ##BST is empty
@@ -33,31 +34,21 @@ class BST:
         else:
             self.inorder(rt.left)
             print(rt.data, end=" ")
-            self.cnt+=1
+            #print total no of leaf nodes in the tree means nodes with no childern
+            if rt.left is None and rt.right is None:
+                self.lcnt+=1
+            self.cnt+=1  #total no of nodes in the tree
             self.inorder(rt.right)
-    def preorder(self, rt):
-        if rt is None:
-            return
-        else:
-            print(rt.data, end=" ")
-            self.preorder(rt.left)
-            self.preorder(rt.right)
-    def postorder(self, rt):
-        if rt is None:
-            return
-        else:
-            self.postorder(rt.left)
-            self.postorder(rt.right)
-            print(rt.data, end=" ")
+  
     def findminmax(self):
         temp=self.root
         while temp.left:
             temp=temp.left
-        print("\nMin: ", temp.data)
+        print("\nMin value: ", temp.data)
         temp=self.root
         while temp.right:
             temp=temp.right
-        print("\nMax: ", temp.data)
+        print("\nMax value: ", temp.data)
 
     
 
@@ -70,9 +61,7 @@ b1.insert(Node(65))
 b1.insert(Node(300))
 print("\nInorder: ")
 b1.inorder(b1.root)
+print("\n total  no of leaf nodes:",b1.lcnt)
 print("\nNo of nodes: ",b1.cnt)
-print("\nPreorder: ")
-b1.preorder(b1.root)
-print("\nPostorder: ")
-b1.postorder(b1.root)
+
 b1.findminmax()
