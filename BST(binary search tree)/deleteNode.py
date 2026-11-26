@@ -75,15 +75,7 @@ class BST:
             self.cnt+=1  #total no of nodes in the tree
             self.inorder(rt.right)
   
-    def findminmax(self):
-        temp=self.root
-        while temp.left:
-            temp=temp.left
-        print("\nMin value: ", temp.data)
-        temp=self.root
-        while temp.right:
-            temp=temp.right
-        print("\nMax value: ", temp.data)
+    
 
     
 
@@ -99,7 +91,7 @@ print("\nInorder: ")
 b1.inorder(b1.root)
 
 
-#b1.findminmax()
+
 b1.del_node(b1.root, 65 )
 print("\n After Deletion:", end=" ")
 b1.inorder(b1.root)
