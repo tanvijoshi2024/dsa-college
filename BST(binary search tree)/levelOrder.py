@@ -44,16 +44,21 @@ class BST:
         else:
             arr = []
             cnt=0   # for counting visited nodes
+            level=0  # for counting levels
             arr.append(rt)
             while cnt<len(arr):
-                temp=arr[cnt]
-                cnt+=1
-                print(temp.data, end=" ")
-                if temp.left:
-                    arr.append(temp.left)
-                if temp.right:
-                    arr.append(temp.right)
-                
+                node_count=len(arr)-cnt # no of nodes to be visited at each level
+                print("\nLevel:", level, end=" ")
+                for i in range(node_count):
+                    temp=arr[cnt]
+                    cnt+=1
+                    print(temp.data, end=" ")
+                    if temp.left:
+                        arr.append(temp.left)
+                    if temp.right:
+                        arr.append(temp.right)
+                level+=1
+            print("\n Height of the tree:", level-1)  # height of the tree
    
 
     
@@ -69,5 +74,6 @@ print("\nInorder: ")
 b1.inorder(b1.root)
 print("\nLevel Order")
 b1.levelOrder(b1.root)
+
 
 
